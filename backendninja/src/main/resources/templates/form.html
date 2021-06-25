@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Form</title>
+</head>
+<body>
+<form action="#" th:action="@{/example3/addperson}" th:object="${person}" method="post">
+    <p>Nombre: <input type="text" th:field="*{name}"/></p>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Nombre debe tener entre 2 y 6 caracteres</p>
+    <p>Años: <input type="number" th:field="*{age}"/></p>
+    <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Edad debe ser mayor a 18</p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

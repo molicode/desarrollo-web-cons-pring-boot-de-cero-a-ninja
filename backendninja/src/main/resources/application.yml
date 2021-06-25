@@ -2,3 +2,5 @@ spring:
   banner:
     image:
       location: molicode.png
+
+

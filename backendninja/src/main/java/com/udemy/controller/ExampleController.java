@@ -16,9 +16,9 @@ public class ExampleController {
 
     public static final String EXAMPLE_VIEW = "example";
 
-//    @Autowired
-//    @Qualifier("exampleService")
-//    private ExampleService exampleService;
+    @Autowired
+    @Qualifier("exampleService")
+    private ExampleService exampleService;
 
     @Autowired
     @Qualifier("exampleComponent")
@@ -28,10 +28,10 @@ public class ExampleController {
     @GetMapping("/exampleString")
     //@RequestMapping(value="exampleString", method = RequestMethod.GET)
     public String exampleString(Model model) {
-//        exampleComponent.sayHello();
+        exampleComponent.sayHello();
 
         //model.addAttribute("person", new Person("Alejandro",36));
-//        model.addAttribute("people", exampleService.getListPeople());
+        model.addAttribute("people", exampleService.getListPeople());
         return EXAMPLE_VIEW;
     }
 
@@ -41,8 +41,9 @@ public class ExampleController {
     public ModelAndView exampleMAV() {
         ModelAndView modelAndView = new ModelAndView(EXAMPLE_VIEW);
         //modelAndView.addObject("person", new Person("Alberto",30));
-//        modelAndView.addObject("people", exampleService.getListPeople());
+        modelAndView.addObject("people", exampleService.getListPeople());
         return modelAndView;
     }
+
 
 }

@@ -12,12 +12,11 @@ public class ExampleComponent {
 
     private static final Log LOG = LogFactory.getLog(ExampleComponent.class);
 
-    @Autowired
-    @Qualifier("courseJpaRepository")
-    private CourseJpaRepository courseJpaRepository;
+//    @Autowired
+//    @Qualifier("courseJpaRepository")
+//    private CourseJpaRepository courseJpaRepository;
 
     public void sayHello(){
-
         LOG.info("Hello from examplecomponent.");
     }
 }

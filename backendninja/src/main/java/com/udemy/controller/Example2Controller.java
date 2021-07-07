@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller("/")
+@Controller
 @RequestMapping("/example2")
 public class Example2Controller {
 
@@ -30,4 +30,5 @@ public class Example2Controller {
         mav.addObject("nm_in_model", name);
         return mav;
     }
+
 }

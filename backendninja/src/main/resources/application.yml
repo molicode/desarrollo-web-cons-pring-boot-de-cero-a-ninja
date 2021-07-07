@@ -1,6 +1,6 @@
 spring:
   banner:
     image:
-      location: molicode.png
+      location: static/imgs/molicode.png
 
 

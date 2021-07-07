@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-//import javax.validation.Valid;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/example3")
@@ -47,7 +47,7 @@ public class Example3Controller {
     }
 
     @PostMapping("/addperson")
-    public ModelAndView addPerson(@ModelAttribute("person") Person person, BindingResult bindingResult) {
+    public ModelAndView addPerson(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult) {
         LOGGER.info("METHOD: 'addPerson' --PARAMS:'" + person + "'");
 
         ModelAndView mav = new ModelAndView();
@@ -59,9 +59,7 @@ public class Example3Controller {
             mav.addObject("person", person);
         }
 
-
         LOGGER.info("TEMPLATE: '" + RESULT_VIEW + "' -- DATA: '" + person + "'");
         return mav;
     }
-
 }

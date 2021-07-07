@@ -13,14 +13,12 @@ public class RequestTimeInterceptor extends HandlerInterceptorAdapter{
 
     private static final Log LOG = LogFactory.getLog(RequestTimeInterceptor.class);
 
-    //Primero
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         request.setAttribute("startTime", System.currentTimeMillis());
         return true;
     }
 
-    //Segundo
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         long starTime = (long) request.getAttribute("startTime");
